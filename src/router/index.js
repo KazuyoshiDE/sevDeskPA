@@ -1,22 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/Dashboard.vue'
+import BitcoinDetails from '../views/BitcoinDetails.vue'
+import BitcoinConverter from '../views/BitcoinConverter.vue'
+import BitcoinChart from '../views/BitcoinChart.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Dashboard',
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/bitcoin-details',
+    name: 'Bitcoin Details',
+    component: BitcoinDetails
+  },
+  {
+    path: '/bitcoin-converter',
+    name: 'Bitcoin Umrechner',
+    component: BitcoinConverter
+  },
+  {
+    path: '/bitcoin-chart',
+    name: 'Bitcoin Diagramm',
+    component: BitcoinChart
   }
 ]
 
