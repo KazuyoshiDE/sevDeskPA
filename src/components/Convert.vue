@@ -16,9 +16,12 @@
             >{{ currency.value }}</option>
           </select>
         </div>
-        <button class="btn col col-3" type="submit">Umrechnen</button>
+        <button class="btn convert-btn deep-purple" type="submit">Umrechnen</button>
       </form>
-      {{ response }}
+      <div v-if="converted">
+        <h4>Umgerechnet:</h4>
+        <h4 class="converted-value">{{ converted }}</h4>
+      </div>
     </div>
   </div>
 </template>
@@ -38,9 +41,7 @@ export default {
         ]
       },
 
-      response: null,
-      result: null,
-      hasResult: false
+      converted: null,
     };
   },
 
@@ -54,9 +55,47 @@ export default {
       if (this.form.currency) {
         axios
       .get('https://blockchain.info/tobtc?currency='+this.form.currency+'&value='+this.form.price)
-      .then(response => (this.response = response.data))
+      .then(response => (this.converted = response.data))
       }
     }
   },
 };
 </script>
+
+<style lang="scss">
+.bitcoin-details {
+  .convert-btn {
+    margin-top: 25px;
+    font-size: 18px;
+  }
+
+  .select-wrapper {
+    .select-dropdown {
+      &:focus {
+        border-bottom: 1px solid #673ab7;
+      }
+
+      span {
+        color: #673ab7;
+      }
+    }
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input[type="number"] {
+    &:not(.browser-default) {
+      &:focus:not([readonly]) {
+        border-bottom: 1px solid #673ab7;
+        box-shadow: 0 1px 0 0 #673ab7;
+      }
+    }
+  }
+
+  h4 {
+    font-weight: 800;
+  }
+}
+</style>

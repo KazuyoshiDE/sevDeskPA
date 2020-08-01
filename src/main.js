@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import chart from 'chart.js'
-import particle from 'particles.js'
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title

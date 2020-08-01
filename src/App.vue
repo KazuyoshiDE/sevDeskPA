@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <div id="particles-js"></div>
     <TheHeader />
     <router-view />
   </div>
@@ -17,15 +16,20 @@ export default {
 
   mounted() {
     M.AutoInit();
-    window.particlesJS.load('particles-js', 'particles.json', null);
   }
 }
 </script>
 
 <style lang="scss">
 body {
-  background: rgb(29, 34, 43);
-  background-size: cover;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 650px;
+    left: 0;
+    background: url(assets/background.jpg);
+  }
 }
 
 #app {
@@ -33,13 +37,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #fff;
+  color: rgb(54, 54, 54);
 
-  #particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+  h3 {
+    font-size: 60px;
+    font-weight: 800;
+
+    @media (min-width: 768px) {
+      font-size: 120px;
+    }
   }
 }
 </style>

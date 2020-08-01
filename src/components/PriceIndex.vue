@@ -42,16 +42,6 @@ export default {
 
 .price-index__wrapper {
   margin: auto;
-  padding: 25px 0 0 0;
-  background: #050c13b8;
-
-  @media (min-width: 600px) {
-    width: 75%;
-  }
-
-  @media (min-width: 992px) {
-    width: 50%;
-  }
 
   .price-index__description {
     display: flex;
@@ -65,10 +55,6 @@ export default {
   .price-index {
     display: flex;
     padding: 20px 25px;
-
-    &:nth-child(even) {
-      background: #0b1a354f;
-    }
 
     span {
       flex: 1;

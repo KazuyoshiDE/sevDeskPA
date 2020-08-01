@@ -72,28 +72,18 @@ export default {
 .details__wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  width: 840px;
   margin: auto;
-  background: #050c13b8;
+  font-size: 20px;
 
   .detail__wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 25px;
-
-    &:nth-child(even) {
-      background: #0b1a354f;
-    }
-
     .detail__description {
-      font-weight: 700;
-      width: 75%;
+      font-weight: 800;
       text-align: left;
     }
 
     .detail__value {
       text-align: left;
-      width: 25%;
     }
   }
 }
