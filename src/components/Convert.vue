@@ -16,7 +16,7 @@
             >{{ currency.value }}</option>
           </select>
         </div>
-        <button class="btn convert-btn deep-purple" type="submit">Umrechnen</button>
+        <button class="btn convert-btn" type="submit">Umrechnen</button>
       </form>
       <div v-if="converted" class="converted">
         <h4>Umgerechnet:</h4>
@@ -59,6 +59,10 @@ export default {
       }
     }
   },
+
+  mounted() {
+    M.AutoInit();
+  }
 };
 </script>
 
@@ -67,6 +71,12 @@ export default {
   .convert-btn {
     margin-top: 25px;
     font-size: 18px;
+    background-color: #673ab7;
+    transition: background-color 0.3s ease-in;
+
+    &:hover {
+      background-color: #7e57c2;
+    }
   }
 
   .select-wrapper {
@@ -96,6 +106,12 @@ export default {
 
   h4 {
     font-weight: 800;
+  }
+
+  .converted {
+    .converted-value {
+      margin-top: 0;
+    }
   }
 }
 </style>

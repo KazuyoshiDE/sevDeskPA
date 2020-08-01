@@ -72,14 +72,24 @@ export default {
 .details__wrapper {
   display: flex;
   flex-direction: column;
-  width: 840px;
+  align-items: center;
   margin: auto;
   font-size: 20px;
 
   .detail__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      width: 600px;
+    }
+
     .detail__description {
       font-weight: 800;
       text-align: left;
+      width: 420px;
     }
 
     .detail__value {

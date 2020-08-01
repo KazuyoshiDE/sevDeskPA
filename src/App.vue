@@ -13,10 +13,6 @@ export default {
   components: {
     TheHeader
   },
-
-  mounted() {
-    M.AutoInit();
-  }
 }
 </script>
 

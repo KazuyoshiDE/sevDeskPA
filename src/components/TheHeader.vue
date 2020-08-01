@@ -47,6 +47,14 @@
   </header>
 </template>
 
+<script>
+export default {
+  mounted() {
+    M.AutoInit();
+  }
+}
+</script>
+
 <style lang="scss">
 header {
   nav {
@@ -63,6 +71,7 @@ header {
       .brand-logo {
         position: static;
         float: right;
+        transform: translateX(0);
 
         svg {
           height: 50px;
@@ -78,17 +87,16 @@ header {
         background: #673ab7;
         width: 50px;
         height: 50px;
+        transition: background 0.3s ease-in;
+
+        &:hover {
+          background: #7e57c2;
+        }
 
         .material-icons {
           height: auto;
           line-height: 1;
         }
-      }
-    }
-
-    @media (min-width: 992px) {
-      .brand-logo {
-        transform: translateX(0);
       }
     }
   }
