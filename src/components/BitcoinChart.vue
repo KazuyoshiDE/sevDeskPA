@@ -13,7 +13,7 @@
           let LINEDATA = [];
 
           axios
-            .get('marketPrice.json') // TODO: Change get request to blockchain api
+            .get('marketPrice.json') //TODO: Change get request to blockchain api -> last try got a CORS Error
             .then((response) => {
               LINEDATA = {...response.data.values};
               data = Object.keys(LINEDATA).map(key => LINEDATA[key]);

@@ -7,8 +7,8 @@
       <span class="description__item">Letzter Verkaufspreis</span>
     </div>
     <div>
-      <div v-for="currency in info" :key="currency.index" class="price-index">
-        <span class="price-index__currency">{{ currency.symbol }}</span>
+      <div v-for="(currency, index) in info" :key="index" class="price-index">
+        <span class="price-index__currency">{{ index }} | {{ currency.symbol }}</span>
         <span class="price-index__buy">{{ currency.buy }}</span>
         <span class="price-index__sell">{{ currency.sell }}</span>
         <span class="price-index__last">{{ currency.last }}</span>
@@ -21,14 +21,18 @@
 export default {
     data() {
     return {
-      info: null
+      info: null,
+      currencyName: null
     }
   },
 
    mounted () {
     axios
       .get('https://blockchain.info/ticker')
-      .then(response => (this.info = response.data))
+      .then(response => {
+        this.info = response.data;
+        this.currencyName = Object.keys(response.data);
+      })
   },
 }
 </script>
@@ -54,7 +58,11 @@ export default {
 
   .price-index {
     display: flex;
-    padding: 20px 25px;
+    padding: 20px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(54, 54, 54, 0.1);
+    }
 
     span {
       flex: 1;
