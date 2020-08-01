@@ -20,7 +20,7 @@
       </form>
       <div v-if="converted" class="converted">
         <h4>Umgerechnet:</h4>
-        <h4 class="converted-value">{{ converted }}</h4>
+        <h4 class="converted-value">{{ converted }} ₿</h4>
       </div>
     </div>
   </div>
@@ -77,6 +77,10 @@ export default {
     transition: background-color 0.3s ease-in;
 
     &:hover {
+      background-color: #7e57c2;
+    }
+
+    &:focus {
       background-color: #7e57c2;
     }
   }

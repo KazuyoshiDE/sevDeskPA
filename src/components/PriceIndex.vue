@@ -52,7 +52,8 @@ export default {
 
     .description__item {
       flex: 1;
-      font-weight: 600;
+      font-weight: 800;
+      font-size: 16px;
     }
   }
 
