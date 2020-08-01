@@ -11,22 +11,26 @@ const routes = [
   {
     path: '/',
     name: 'Dashboard',
-    component: Home
+    component: Home,
+    meta: { title: 'Dashboard' }
   },
   {
     path: '/bitcoin-details',
     name: 'Bitcoin Details',
-    component: BitcoinDetails
+    component: BitcoinDetails,
+    meta: { title: 'Bitcoin Details' }
   },
   {
     path: '/bitcoin-converter',
     name: 'Bitcoin Umrechner',
-    component: BitcoinConverter
+    component: BitcoinConverter,
+    meta: { title: 'Bitcoin Umrechner' }
   },
   {
     path: '/bitcoin-chart',
     name: 'Bitcoin Diagramm',
-    component: BitcoinChart
+    component: BitcoinChart,
+    meta: { title: 'Bitcoin Diagramm' }
   }
 ]
 

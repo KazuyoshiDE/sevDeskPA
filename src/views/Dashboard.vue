@@ -1,94 +1,43 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <h3>Bitcoin Price Index</h3>
-
-    <div class="price-index__wrapper">
-      <div class="price-index__description">
-        <span class="description__item">Währung</span>
-        <span class="description__item">Kaufpreis</span>
-        <span class="description__item">Verkaufspreis</span>
-        <span class="description__item">Letzter Verkaufspreis</span>
-      </div>
-      <div>
-        <div v-for="currency in info" :key="currency.index" class="price-index">
-          <span class="price-index__currency">{{ currency.symbol }}</span>
-          <span class="price-index__buy">{{ currency.buy }}</span>
-          <span class="price-index__sell">{{ currency.sell }}</span>
-          <span class="price-index__last">{{ currency.last }}</span>
-        </div>
-      </div>
+  <div class="dashboard">
+    <div class="dashboard__content">
+      <h3>Bitcoin Price Index</h3>
+      <priceIndex />
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import PriceIndex from '@/components/PriceIndex.vue'
 
 export default {
-  name: 'Dashbaord',
-
-  data() {
-    return {
-      info: null
-    }
-  },
-
   components: {
-    HelloWorld
-  },
-
-  filters: {
-    
-  },
-
-   mounted () {
-    axios
-      .get('https://blockchain.info/ticker')
-      .then(response => (this.info = response.data))
+    PriceIndex
   },
 }
 </script>
 
 <style lang="scss">
-.home {
-  h3 {
-    margin-bottom: 45px;
-  }
-}
+.dashboard {
+  .dashboard__content {
+    width: 100%;
+    margin: auto;
 
-.price-index__wrapper {
-  margin: auto;
-
-  @media (min-width: 600px) {
-    width: 75%;
-  }
-
-  @media (min-width: 992px) {
-    width: 50%;
-  }
-
-  .price-index__description {
-    display: flex;
-
-    .description__item {
-      flex: 1;
-      font-weight: 600;
-    }
-  }
-
-  .price-index {
-    display: flex;
-    padding: 20px 0;
-
-    &:nth-child(even) {
-      background-color: rgb(223, 223, 223);
+    @media (min-width: 768px) {
+      min-width: 650px;
+      width: 0;
     }
 
-    span {
-      flex: 1;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 820px;
+      background: url(../assets/background-top.jpg);
+      z-index: -1;
     }
   }
 }

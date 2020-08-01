@@ -2,13 +2,15 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import axios from 'axios'
+import chart from 'chart.js'
 
-import 'materialize-css'
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title
+  next()
+})
+
 import 'materialize-css/dist/css/materialize.min.css'
 import 'material-design-icons/iconfont/material-icons.css'
-
-window.$ = require('jquery')
-window.JQuery = require('jquery')
 
 window.axios = require('axios');
 

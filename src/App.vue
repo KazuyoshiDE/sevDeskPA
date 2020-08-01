@@ -13,19 +13,36 @@ export default {
   components: {
     TheHeader
   },
-
-  mounted() {
-    M.AutoInit()
-  }
 }
 </script>
 
 <style lang="scss">
+body {
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 427px;
+    left: 0;
+    background: url(assets/background.jpg);
+    background-position-y: 590px;
+  }
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: rgb(54, 54, 54);
+
+  h3 {
+    font-size: 60px;
+    font-weight: 800;
+
+    @media (min-width: 768px) {
+      font-size: 120px;
+    }
+  }
 }
 </style>
