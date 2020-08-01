@@ -1,7 +1,7 @@
 <template>
   <div class="bitcoin-chart">
     <h3>Bitcoin Diagramm</h3>
-    <bitcoinChart height="600px" width="600px" />
+    <bitcoinChart />
   </div>
 </template>
 

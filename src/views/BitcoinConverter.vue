@@ -1,5 +1,5 @@
 <template>
-  <div class="bitcoin-details">
+  <div class="bitcoin-converter">
     <h3>Bitcoin Converter</h3>
     <convert />
   </div>

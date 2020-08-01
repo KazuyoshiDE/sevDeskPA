@@ -67,7 +67,9 @@ export default {
 </script>
 
 <style lang="scss">
-.bitcoin-details {
+.bitcoin-converter {
+  min-height: 45vh;
+
   .convert-btn {
     margin-top: 25px;
     font-size: 18px;

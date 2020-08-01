@@ -22,9 +22,10 @@ body {
     content: "";
     position: absolute;
     width: 100%;
-    height: 650px;
+    height: 427px;
     left: 0;
     background: url(assets/background.jpg);
+    background-position-y: 590px;
   }
 }
 
