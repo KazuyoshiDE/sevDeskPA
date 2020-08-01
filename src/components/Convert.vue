@@ -18,7 +18,7 @@
         </div>
         <button class="btn convert-btn deep-purple" type="submit">Umrechnen</button>
       </form>
-      <div v-if="converted">
+      <div v-if="converted" class="converted">
         <h4>Umgerechnet:</h4>
         <h4 class="converted-value">{{ converted }}</h4>
       </div>
