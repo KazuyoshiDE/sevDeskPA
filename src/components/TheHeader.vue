@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav>
-      <div class="nav-wrapper light-blue lighten-1">
+      <div class="nav-wrapper">
         <a href="#!" class="brand-logo">Logo</a>
         <a href="#" data-target="mobile-nav" class="sidenav-trigger">
           <i class="material-icons">menu</i>
@@ -41,15 +41,31 @@
 </template>
 
 <style lang="scss">
-.nav-wrapper {
-  padding: 0 20px;
+header {
+  nav {
+    background-color: transparent;
 
-  .brand-logo {
-    position: absolute;
+    .nav-wrapper {
+      padding: 0 20px;
 
-    @media (min-width: 992px) {
-      position: static;
-      float: left;
+      .brand-logo {
+        position: absolute;
+
+        @media (min-width: 992px) {
+          position: static;
+          float: left;
+        }
+      }
+
+      ul {
+        li {
+          a {
+            &:hover {
+              background: #050c13b8;
+            }
+          }
+        }
+      }
     }
   }
 }
