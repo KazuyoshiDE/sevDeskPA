@@ -1,7 +1,9 @@
 <template>
-  <div class="bitcoin-details">
-    <h3>Bitcoin Details</h3>
-    <bitcoinDetails />
+  <div class="container">
+    <div class="bitcoin-details">
+      <h3>Bitcoin Details</h3>
+      <bitcoinDetails />
+    </div>
   </div>
 </template>
 

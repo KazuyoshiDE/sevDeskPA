@@ -1,8 +1,10 @@
 <template>
-  <div class="dashboard">
-    <div class="dashboard__content">
-      <h3>Bitcoin Price Index</h3>
-      <priceIndex />
+  <div class="container">
+    <div class="dashboard">
+      <div class="dashboard__content">
+        <h3>Bitcoin Price Index</h3>
+        <priceIndex />
+      </div>
     </div>
   </div>
 </template>

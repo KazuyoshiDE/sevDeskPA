@@ -89,7 +89,11 @@ export default {
     .detail__description {
       font-weight: 800;
       text-align: left;
-      width: 420px;
+      width: 260px;
+
+      @media (min-width: 450px) {
+        width: 420px;
+      }
     }
 
     .detail__value {
